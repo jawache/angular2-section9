@@ -1,7 +1,8 @@
-import { Component } from "../node_modules/angular2/core.d";
+import {Component} from "angular2/core";
+
 @Component({
-  selector: 'hello-world',
-  template: `
+    selector: 'hello-world',
+    template: `
   <div>
     Hello world
   </div>
