@@ -1,11 +1,25 @@
- import {UpgradeAdapter} from 'angular2/upgrade';
+import {UpgradeAdapter} from 'angular2/upgrade';
+import {Component} from "angular2/core";
 
- //declare var angular:any;
+declare var angular:any;
 
- const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter();
+const upgradeAdapter:UpgradeAdapter = new UpgradeAdapter();
 
- //angular.module('angular-legacy').directive('algorithms',adapter.downgradeNg2Component(Algorithms));
 
- upgradeAdapter.bootstrap(document.body, ['codecraft'], {strictDi: false});
+@Component({
+    selector: 'hello-world',
+    template: `
+  <div>
+    Hello world
+  </div>
+`
+})
+export class HelloWorld {
+
+}
+
+angular.module('codecraft').directive('helloWorld', upgradeAdapter.downgradeNg2Component(HelloWorld));
+
+upgradeAdapter.bootstrap(document.body, ['codecraft'], {strictDi: false});
 
 

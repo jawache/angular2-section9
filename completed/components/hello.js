@@ -1,4 +1,4 @@
-System.register(['angular2/upgrade', "angular2/core"], function(exports_1) {
+System.register(["../node_modules/angular2/core.d"], function(exports_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,23 +9,19 @@ System.register(['angular2/upgrade', "angular2/core"], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var upgrade_1, core_1;
-    var upgradeAdapter, HelloWorld;
+    var core_d_1;
+    var HelloWorld;
     return {
         setters:[
-            function (upgrade_1_1) {
-                upgrade_1 = upgrade_1_1;
-            },
-            function (core_1_1) {
-                core_1 = core_1_1;
+            function (core_d_1_1) {
+                core_d_1 = core_d_1_1;
             }],
         execute: function() {
-            upgradeAdapter = new upgrade_1.UpgradeAdapter();
             HelloWorld = (function () {
                 function HelloWorld() {
                 }
                 HelloWorld = __decorate([
-                    core_1.Component({
+                    core_d_1.Component({
                         selector: 'hello-world',
                         template: "\n  <div>\n    Hello world\n  </div>\n"
                     }), 
@@ -34,9 +30,7 @@ System.register(['angular2/upgrade', "angular2/core"], function(exports_1) {
                 return HelloWorld;
             }());
             exports_1("HelloWorld", HelloWorld);
-            angular.module('codecraft').directive('helloWorld', upgradeAdapter.downgradeNg2Component(HelloWorld));
-            upgradeAdapter.bootstrap(document.body, ['codecraft'], { strictDi: false });
         }
     }
 });
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=hello.js.map
